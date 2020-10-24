@@ -1,0 +1,10 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/blue copy.png</file>
+    <file>icons/blue print.png</file>
+    <file>icons/blue save.png</file>
+    <file>icons/copy.png</file>
+    <file>icons/print.png</file>
+    <file>icons/save.png</file>
+  </qresource>
+</RCC>

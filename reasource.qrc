@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>images/10X10 Dropdown.png</file>
+    <file>images/blackbg-cross-corsur.png</file>
+    <file>images/whitbg-cross-corsur.png</file>
+    <file>images/Tray Icon/gray active.png</file>
+    <file>images/Tray Icon/gray inactive.png</file>
+    <file>images/reverse.png</file>
+    <file>images/browse.png</file>
+    <file>images/paint cursor white.png</file>
+  </qresource>
+</RCC>

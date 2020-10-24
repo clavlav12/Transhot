@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/blue export.png</file>
+    <file>icons/blue gear.png</file>
+    <file>icons/blue google.png</file>
+    <file>icons/blue paint.png</file>
+    <file>icons/export.png</file>
+    <file>icons/gear.png</file>
+    <file>icons/google.png</file>
+    <file>icons/paint.png</file>
+  </qresource>
+</RCC>

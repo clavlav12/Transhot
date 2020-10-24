@@ -1,0 +1,1 @@
+pyinstaller -w --onefile --icon="icon.ico" Transhot.py
