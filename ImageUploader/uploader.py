@@ -1,5 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import webbrowser
+
 try:
     from ImageUploader.uploaderUI import Ui_Dialog
     from ImageUploader.ImageUploaderInterface import UploaderInterface
@@ -13,7 +14,7 @@ class showUploadedImage(QtWidgets.QDialog, Ui_Dialog):
     DX = 20
     DY = 80
 
-    def __init__(self, interface: UploaderInterface, pixmap: QtGui.QPixmap, SCREEN_RESOLUTION,
+    def __init__(self, interface: UploaderInterface, pixmap: QtGui.QPixmap,
                  parent=None, to_google=False):
         super(showUploadedImage, self).__init__(parent)
         self.setupUi(self)
@@ -43,9 +44,14 @@ class showUploadedImage(QtWidgets.QDialog, Ui_Dialog):
         self.stackedWidget.setCurrentIndex(0)
         self.setFixedSize(self.size())
 
-        self.setGeometry(SCREEN_RESOLUTION[0] - int(self.DX * (SCREEN_RESOLUTION[0]/1920)) - self.width(),
-                         SCREEN_RESOLUTION[1] - int(self.DY * (SCREEN_RESOLUTION[1]/1080)) - self.height(),
-                         self.width(), self.height())  # The DX and DY values where chosen on a 1920x1080 screen.
+        mouseScreen = QtWidgets.QApplication.desktop().primaryScreen()
+        SCREEN_RESOLUTION = QtWidgets.QDesktopWidget().screenGeometry(mouseScreen)
+        SCREEN_RESOLUTION = (SCREEN_RESOLUTION.width(), SCREEN_RESOLUTION.height())
+
+        self.move(SCREEN_RESOLUTION[0] - int(self.DX * (SCREEN_RESOLUTION[0] / 1920)) - self.width(),
+                  SCREEN_RESOLUTION[1] - int(self.DY * (SCREEN_RESOLUTION[1] / 1080)) - self.height()
+                  )  # The DX and DY values where chosen on a 1920x1080 screen.
+
         self.setWindowFlags(QtCore.Qt.Dialog | QtCore.Qt.MSWindowsFixedSizeDialogHint)
 
     def copyUrl(self):
@@ -73,6 +79,7 @@ class showUploadedImage(QtWidgets.QDialog, Ui_Dialog):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
     ui = Ui_Dialog()

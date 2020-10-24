@@ -220,8 +220,7 @@ class Main(QtWidgets.QMainWindow):
             print("beep")
             QtWidgets.QApplication.beep()
         else:
-            self.uploader = showUploadedImage(self.interface, self.getCroppedScreenShot(),
-                                              self.SCREEN_RESOLUTION, self, to_google)
+            self.uploader = showUploadedImage(self.interface, self.getCroppedScreenShot(), self, to_google)
             self.uploader.show()
             self.hide()
 

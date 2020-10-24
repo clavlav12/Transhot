@@ -182,6 +182,8 @@ class PreferenceDialog(shortcutEditor):
         self.gridLayout.addWidget(self.pathLabel, 3, 0)
         self.gridLayout.addWidget(self.pathLineEdit, 3, 1)
 
+        self.move(self.pos() + (QtGui.QGuiApplication.primaryScreen().geometry().center() - self.geometry().center()))
+
     def restoreToDefault(self):
         super(PreferenceDialog, self).restoreToDefault()
         self.settingsDB.rollback()
