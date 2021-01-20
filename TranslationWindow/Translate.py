@@ -11,8 +11,13 @@ try:
 except ModuleNotFoundError:
     from SettingsDialog.ISO_converter import ISO_2_TO_3, ENGLISH_3, ISO_3_TO_2
 
+
+def generate_translator():
+    return Translator(['translate.googleapis.com'])
+
+
 tess.modded_pytesseract.tesseract_cmd = r'tesseract2\tesseract.exe'
-trans = Translator()
+trans = generate_translator()
 languages = LANGUAGES
 languages['auto'] = 'Auto'
 
@@ -123,14 +128,14 @@ def TranslateFromImage(image, destination: str = 'he', src: str = 'auto', imsour
 
     yield final_result
 
-    t = trans.translate(
+    t = translate(
         final_result,
         src='auto',
         dest=destination
     )
 
     if languages[t.src] == languages[t.dest] and not src == 'auto':
-        t = trans.translate(
+        t = translate(
             final_result,
             dest=src,
             src=destination
@@ -142,13 +147,31 @@ def TranslateFromImage(image, destination: str = 'he', src: str = 'auto', imsour
 
 
 def TranslateFromText(text, destination: str = 'he', src: str = 'auto'):
-    t = trans.translate(
+    t = translate(
         text,
         dest=destination,
         src=src
     )
     return text, t.text, t.src, t.dest
 
+
+def translate(text, dest, src):
+    global trans
+    try:
+        t = trans.translate(
+            text,
+            dest=dest,
+            src=src
+        )
+    except Exception as e:
+        print(e)
+        trans = generate_translator()
+        t = trans.translate(
+            text,
+            dest=dest,
+            src=src
+        )
+    return t
 
 def openImage(path):
     startfile(path)

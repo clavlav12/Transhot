@@ -136,7 +136,7 @@ class TranslateThread(QtCore.QThread):
                 translation = Translate.TranslateFromText(self.text, self.dest, self.source)
                 self.translatingReady.emit(*translation)
             except Exception as e:
-                print(e)
+                raise e
                 self.translatingFailed.emit(e)
         else:
             translation_iter = Translate.TranslateFromImage(self.image, self.dest, self.source, self.imsource)
@@ -146,7 +146,7 @@ class TranslateThread(QtCore.QThread):
                 translation, source_language, destination_language = next(translation_iter)
                 self.translatingReady.emit(source_text, translation, source_language, destination_language)
             except Exception as e:
-                print(e)
+                raise e
                 self.translatingFailed.emit(e)
 
 

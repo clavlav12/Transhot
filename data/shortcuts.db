@@ -1,0 +1,72 @@
+{
+    "Upload Screenshot": {
+        "tooltip": "Upload Screenshot",
+        "shortcut": "Ctrl+U",
+        "enabled": true
+    },
+    "Translate": {
+        "tooltip": "Translate",
+        "shortcut": "Ctrl+T",
+        "enabled": true
+    },
+    "Open Settings Page": {
+        "tooltip": "Open Settings Page",
+        "shortcut": "Ctrl+J",
+        "enabled": true
+    },
+    "quick save": {
+        "tooltip": "quick save",
+        "shortcut": "Ctrl+Shift+S",
+        "enabled": true
+    },
+    "Take A Screenshot": {
+        "tooltip": "Take A Screenshot",
+        "shortcut": "Print",
+        "enabled": true
+    },
+    "Redo Drawing": {
+        "tooltip": "Redo Drawing",
+        "shortcut": "Ctrl+Y",
+        "enabled": true
+    },
+    "Quick Translation": {
+        "tooltip": "Quick Translation",
+        "shortcut": "Ctrl+N",
+        "enabled": true
+    },
+    "Save & Open": {
+        "tooltip": "Save & Open",
+        "shortcut": "Ctrl+R",
+        "enabled": true
+    },
+    "Hide": {
+        "tooltip": "Hide",
+        "shortcut": "Esc",
+        "enabled": true
+    },
+    "Search Screenshot in google": {
+        "tooltip": "Search Screenshot in google",
+        "shortcut": "Ctrl+G",
+        "enabled": true
+    },
+    "Save": {
+        "tooltip": "Save",
+        "shortcut": "Ctrl+S",
+        "enabled": true
+    },
+    "Undo Drawing": {
+        "tooltip": "Undo Drawing",
+        "shortcut": "Ctrl+Z",
+        "enabled": true
+    },
+    "print": {
+        "tooltip": "print",
+        "shortcut": "Ctrl+P",
+        "enabled": true
+    },
+    "Copy To Clipboard": {
+        "tooltip": "Copy To Clipboard",
+        "shortcut": "Ctrl+C",
+        "enabled": true
+    }
+}
